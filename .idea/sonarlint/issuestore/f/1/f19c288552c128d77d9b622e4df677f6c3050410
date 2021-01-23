@@ -1,0 +1,48 @@
+
+Ÿ
+java:S1186ã"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8‹à²—ò.
+F
+java:S1604–"(Make this anonymous inner class a lambda(”šŸÞ8‹à²—ò.
+„
+java:S3252f"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(Œ¶­¾8‹à²—ò.
+^	java:S125°"<This block of commented-out lines of code should be removed.(šíð‡ýÿÿÿÿ8²Öÿ˜ò.
+Y	java:S125ž"<This block of commented-out lines of code should be removed.(½‘Ñ³8‹à²—ò.
+I
+java:S1068å"+Remove this unused "current" private field.(‡Ž—Í8‹à²—ò.
+]	java:S899";Do something with the "boolean" value returned by "delete".(²Œ­ûÿÿÿÿ8‹à²—ò.
+u
+java:S3776®"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(ž¨Œþÿÿÿÿ8‹à²—ò.
+^	java:S125è"<This block of commented-out lines of code should be removed.(í™î¶üÿÿÿÿ8žÃ¶—ò.
+¤
+java:S1186Ó"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8‹à²—ò.
+Š
+java:S3252–"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(ð‘õ¡ÿÿÿÿÿ8‹à²—ò.
+R
+java:S1068A"5Remove this unused "descriptionLayout" private field.(€¶³ 8‹à²—ò.
+Š
+java:S3252Ë"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(ÜÞµ²ûÿÿÿÿ8†õó˜ò.
+R
+java:S1066Ê"/Merge this if statement with the enclosing one.(íœËçüÿÿÿÿ8†õó˜ò.
+K
+java:S1604Œ"(Make this anonymous inner class a lambda(µëÌÂüÿÿÿÿ8‹à²—ò.
+}
+java:S1450C"`Remove the "saveProductButton" field and declare it as a local variable in the relevant methods.(’½€Ë8–ñŒ‰ò.
+Š
+java:S3252’"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(ò×èÓúÿÿÿÿ8‹à²—ò.
+K
+java:S1604…"(Make this anonymous inner class a lambda(ëˆŠüÿÿÿÿ8‹à²—ò.
+q
+java:S4042"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(²Œ­ûÿÿÿÿ8‹à²—ò.
+
+java:S1450;"]Remove the "setImageButton" field and declare it as a local variable in the relevant methods.(åØ×ÿÿÿÿÿ8‹à²—ò.
+Y	java:S125¾"<This block of commented-out lines of code should be removed.(Ê»ï8†õó˜ò.
+]	java:S1101"<This class has 9 parents which is greater than 5 authorized.(þñ®øÿÿÿÿ8‹à²—ò.
+€
+java:S1450<"^Remove the "saveImageButton" field and declare it as a local variable in the relevant methods.(©º¸´ÿÿÿÿÿ8¾˜Ã”ò.
+Y	java:S125Œ"<This block of commented-out lines of code should be removed.(êÊÇÞ8•Ô˜ò.
+Ÿ
+java:S1186Ð"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8‹à²—ò.
+L
+java:S1125")Remove the literal "false" boolean value.(òÝ¹Õþÿÿÿÿ8•å¡˜ò.
+}
+java:S1450A"`Remove the "descriptionLayout" field and declare it as a local variable in the relevant methods.(€¶³ 8‹à²—ò.

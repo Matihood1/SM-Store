@@ -1,0 +1,33 @@
+
+K
+java:S1604î"(Make this anonymous inner class a lambda(úä›Ğşÿÿÿÿ8Õı±¬ò.
+K
+java:S1604¦"(Make this anonymous inner class a lambda(ÿÙ…­şÿÿÿÿ8±ıºÖî.
+z
+java:S1450)"]Remove the "navigationView" field and declare it as a local variable in the relevant methods.(‰Ë”ë8Á– Öî.
+]	java:S125F"<This block of commented-out lines of code should be removed.(«ÖÆêùÿÿÿÿ8•°Àªò.
+…
+java:S3252ƒ"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(½ÑÕ²8ê‹ ¥ò.
+K
+java:S1604­"(Make this anonymous inner class a lambda(é°¤üÿÿÿÿ8±ıºÖî.
+K
+java:S1604Ë"(Make this anonymous inner class a lambda(œ°í¢üÿÿÿÿ8Î­¾¬î.
+M
+java:S5411Ê"*Use the primitive boolean expression here.(ªò•–øÿÿÿÿ8ğíÃ«ò.
+X	java:S110%"<This class has 9 parents which is greater than 5 authorized.(²Ú±8”Ã®í.
+]	java:S125D"<This block of commented-out lines of code should be removed.(Äÿ®şÿÿÿÿ8¦˜çªò.
+K
+java:S1604Á"(Make this anonymous inner class a lambda(é¾ùÒıÿÿÿÿ8Î­¾¬î.
+E
+java:S1604b"(Make this anonymous inner class a lambda(Î¬¯”8Î­¾¬î.
+u
+java:S1450("XRemove the "topAppBar" field and declare it as a local variable in the relevant methods.(ø¯—Ù8òƒ“Öî.
+]	java:S125T"<This block of commented-out lines of code should be removed.(µ”À€ùÿÿÿÿ8Šñ®¹ğ.
+K
+java:S1125Ê"(Remove the literal "true" boolean value.(ªò•–øÿÿÿÿ8Î­¾¬î.
+„
+java:S3252g"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(½ÑÕ²8Î­¾¬î.
+…
+java:S3252‰"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(½ÑÕ²8İîÄ¥ò.
+E
+java:S1604n"(Make this anonymous inner class a lambda(Î¬¯”8Î­¾¬î.
