@@ -47,7 +47,6 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class EditProductActivity extends AppCompatActivity {
-    public static final String EXTRA_EDIT_PRODUCT_PRODUCT = "EXTRA_EDIT_PRODUCT_PRODUCT";
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int CAMERA_REQUEST_CODE = 100;
     private static final String API_IMGUR_UPLOAD_URL = "https://api.imgur.com/3/image";
@@ -185,8 +184,8 @@ public class EditProductActivity extends AppCompatActivity {
         descriptionEditText = findViewById(R.id.edit_product_description);
         saveProductButton = findViewById(R.id.edit_product_save);
 
-        if (getIntent().hasExtra(EXTRA_EDIT_PRODUCT_PRODUCT)) {
-            selectedProduct = (Product) getIntent().getSerializableExtra(EXTRA_EDIT_PRODUCT_PRODUCT);
+        if (getIntent().hasExtra(MainActivity.EXTRA_PRODUCT_DATA)) {
+            selectedProduct = (Product) getIntent().getSerializableExtra(MainActivity.EXTRA_PRODUCT_DATA);
             nameEditText.setText(selectedProduct.getName());
             priceEditText.setText(String.valueOf(selectedProduct.getPrice()));
             descriptionEditText.setText(selectedProduct.getDescription());
@@ -298,7 +297,7 @@ public class EditProductActivity extends AppCompatActivity {
                         if(imageLink != null && !imageLink.isEmpty()) {
                             selectedProduct.setImageUrl(imageLink);
                         }
-                        replyIntent.putExtra(EXTRA_EDIT_PRODUCT_PRODUCT, selectedProduct);
+                        replyIntent.putExtra(MainActivity.EXTRA_PRODUCT_DATA, selectedProduct);
                         setResult(RESULT_OK, replyIntent);
 
                     /*if(currentPhotoPath != null && !currentPhotoPath.isEmpty()) {

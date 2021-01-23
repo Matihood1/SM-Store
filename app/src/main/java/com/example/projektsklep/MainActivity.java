@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private User currentUser;
     private Product selectedProduct;
+    public static final String EXTRA_PRODUCT_DATA = "EXTRA_PRODUCT_DATA";
     public static final int NEW_PRODUCT_ACTIVITY_REQUEST_CODE = 1;
     public static final int EDIT_PRODUCT_ACTIVITY_REQUEST_CODE = 2;
     public static final String IMAGE_URL_BASE = "https://i.imgur.com/";
@@ -83,8 +84,15 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, EditProductActivity.class);
             //intent.putExtra(KEY_EXTRA_BOOK_ID, book.getId());
             selectedProduct = product;
-            intent.putExtra(EditProductActivity.EXTRA_EDIT_PRODUCT_PRODUCT, selectedProduct);
-            startActivityForResult(intent, EDIT_PRODUCT_ACTIVITY_REQUEST_CODE);
+            if(currentUser.getAdmin() == true) {
+                intent.putExtra(EXTRA_PRODUCT_DATA, selectedProduct);
+                startActivityForResult(intent, EDIT_PRODUCT_ACTIVITY_REQUEST_CODE);
+            }
+            else {
+                intent.putExtra(EXTRA_PRODUCT_DATA, selectedProduct);
+                intent.putExtra(LoginActivity.EXTRA_LOGIN_USER, currentUser);
+                startActivity(intent);
+            }
         }
 
         @Override
@@ -252,13 +260,13 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == NEW_PRODUCT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Product product = (Product) data.getSerializableExtra(EditProductActivity.EXTRA_EDIT_PRODUCT_PRODUCT);
+            Product product = (Product) data.getSerializableExtra(EXTRA_PRODUCT_DATA);
             storeViewModel.insert(product);
             Snackbar.make(findViewById(R.id.coordinator_layout),
                     getString(R.string.product_added),
                     Snackbar.LENGTH_LONG).show();
         } else if(requestCode == EDIT_PRODUCT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Product product = (Product) data.getSerializableExtra(EditProductActivity.EXTRA_EDIT_PRODUCT_PRODUCT);
+            Product product = (Product) data.getSerializableExtra(EXTRA_PRODUCT_DATA);
             storeViewModel.update(product);
             Snackbar.make(findViewById(R.id.coordinator_layout),
                     getString(R.string.product_edited),

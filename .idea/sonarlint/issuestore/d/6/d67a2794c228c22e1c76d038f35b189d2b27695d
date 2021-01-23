@@ -1,36 +1,36 @@
 
-w
-java:S1450"ZRemove the "loginButton" field and declare it as a local variable in the relevant methods.(à…÷Ÿ8«¤˜§î.
-z
-java:S1450"]Remove the "passwordLayout" field and declare it as a local variable in the relevant methods.(¥£Ž±8«¤˜§î.
 y
 java:S1450 "]Remove the "registerButton" field and declare it as a local variable in the relevant methods.(›­®d8¥ÖÔ¯í.
-Z
-java:S1128"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉþÿÿÿÿ8Öà·úí.
-J
-java:S16041"(Make this anonymous inner class a lambda(«–Âæþÿÿÿÿ8«¤˜§î.
-Q
-java:S1128"4Remove this unused import 'android.widget.EditText'.(†Å›Ú8Ü¤Ë×í.
-L
-java:S1068"/Remove this unused "emailLayout" private field.(³ÊÚ‘8«¤˜§î.
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(·¡ïõøÿÿÿÿ
 J
 java:S1604A"(Make this anonymous inner class a lambda(ºÁöïûÿÿÿÿ8«¤˜§î.
+Q
+java:S1066O"/Merge this if statement with the enclosing one.(±„‘‰ýÿÿÿÿ8«¤˜§î.
+L
+java:S1068"/Remove this unused "emailLayout" private field.(³ÊÚ‘8«¤˜§î.
 w
 java:S1450"ZRemove the "emailLayout" field and declare it as a local variable in the relevant methods.(³ÊÚ‘8«¤˜§î.
+J
+java:S16041"(Make this anonymous inner class a lambda(«–Âæþÿÿÿÿ8«¤˜§î.
+Z
+java:S1128"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉþÿÿÿÿ8Öà·úí.
+V
+java:S1128"9Remove this unused import 'androidx.annotation.Nullable'.(¾Èêš8Öà·úí.
+Z
+java:S1128"8Remove this unused import 'androidx.lifecycle.LiveData'.(ß„ÝÞþÿÿÿÿ8ÿ×öÀí.
 O
 java:S1068"2Remove this unused "passwordLayout" private field.(¥£Ž±8«¤˜§î.
+w
+java:S1450"ZRemove the "loginButton" field and declare it as a local variable in the relevant methods.(à…÷Ÿ8«¤˜§î.
+Q
+java:S1128"4Remove this unused import 'android.widget.EditText'.(†Å›Ú8Ü¤Ë×í.
 M
 java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Öà·úí.
 ‰
 java:S3252<"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(Éûäßúÿÿÿÿ8½èÌßñ.
-V
-java:S1128"9Remove this unused import 'androidx.annotation.Nullable'.(¾Èêš8Öà·úí.
-O
-java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8Öà·úí.
-Q
-java:S1066O"/Merge this if statement with the enclosing one.(±„‘‰ýÿÿÿÿ8«¤˜§î.
 ‰
 java:S3252S"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(û—ÌŽøÿÿÿÿ8«¤˜§î.
-Z
-java:S1128"8Remove this unused import 'androidx.lifecycle.LiveData'.(ß„ÝÞþÿÿÿÿ8ÿ×öÀí.
-V	java:S110"<This class has 9 parents which is greater than 5 authorized.(·¡ïõøÿÿÿÿ
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8Öà·úí.
+z
+java:S1450"]Remove the "passwordLayout" field and declare it as a local variable in the relevant methods.(¥£Ž±8«¤˜§î.

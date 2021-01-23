@@ -27,3 +27,5 @@ j
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 s
 Capp/src/main/java/com/example/projektsklep/EditProductActivity.java,f\1\f19c288552c128d77d9b622e4df677f6c3050410
+v
+Fapp/src/main/java/com/example/projektsklep/ProductDetailsActivity.java,e\9\e9713a64e39be5dfe59056217a5cfbe96ede29ce

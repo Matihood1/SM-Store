@@ -1,32 +1,32 @@
 
-ž
-java:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8óì€Øí.
 £
-java:S1186a"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8óì€Øí.
-£
-java:S1186x"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8Ñ‚ð•ò.
-V	java:S110"<This class has 9 parents which is greater than 5 authorized.(…‡Çáøÿÿÿÿ
-K
-java:S1604¢"(Make this anonymous inner class a lambda(ºÁöïûÿÿÿÿ8ÓŒþÖí.
+java:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8óì€Øí.
 £
 java:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8óì€Øí.
+£
+java:S1186a"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8óì€Øí.
 y
 java:S1450!"]Remove the "registerButton" field and declare it as a local variable in the relevant methods.(›­®d8Ö§´Òí.
 ž
-java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8óì€Øí.
+java:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8óì€Øí.
 ž
 java:S1186u"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8óì€Øí.
-F
-java:S1604¶"(Make this anonymous inner class a lambda(£¿š¬8ÚãÿÖí.
-Ÿ
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8óì€Øí.
-¤
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8óì€Øí.
+ž
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8óì€Øí.
 }
 java:S1450""[Remove the "cancelButton" field and declare it as a local variable in the relevant methods.(¨çÎüÿÿÿÿ8Ö§´Òí.
-t
-java:S3776%"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ž¨Œþÿÿÿÿ8Š½”•ò.
-£
-java:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8óì€Øí.
+¤
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8óì€Øí.
 ž
 java:S1186K"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8óì€Øí.
+F
+java:S1604¶"(Make this anonymous inner class a lambda(£¿š¬8ÚãÿÖí.
+£
+java:S1186x"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ8Ñ‚ð•ò.
+Ÿ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8óì€Øí.
+t
+java:S3776%"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ž¨Œþÿÿÿÿ8Š½”•ò.
+K
+java:S1604¢"(Make this anonymous inner class a lambda(ºÁöïûÿÿÿÿ8ÓŒþÖí.
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(…‡Çáøÿÿÿÿ
