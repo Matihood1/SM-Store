@@ -29,14 +29,14 @@ public class ProductDetailsActivity extends AppCompatActivity {
         descriptionTextView = findViewById(R.id.product_details_description);
         purchaseButton = findViewById(R.id.product_purchase_button);
 
-        if (getIntent().hasExtra(MainActivity.EXTRA_PRODUCT_DATA)) {
-            selectedProduct = (Product) getIntent().getSerializableExtra(MainActivity.EXTRA_PRODUCT_DATA);
+        if (getIntent().hasExtra(ProductsFragment.EXTRA_PRODUCT_DATA)) {
+            selectedProduct = (Product) getIntent().getSerializableExtra(ProductsFragment.EXTRA_PRODUCT_DATA);
             nameTextView.setText(selectedProduct.getName());
             priceTextView.setText(String.valueOf(selectedProduct.getPrice()));
             descriptionTextView.setText(selectedProduct.getDescription());
             if (selectedProduct.getImageUrl() != null && !selectedProduct.getImageUrl().trim().isEmpty()) {
                 Picasso.get()
-                        .load(MainActivity.IMAGE_URL_BASE + selectedProduct.getImageUrl() + ".jpg")
+                        .load(ProductsFragment.IMAGE_URL_BASE + selectedProduct.getImageUrl() + ".jpg")
                         .placeholder(R.drawable.ic_baseline_image_24dp).into(imageView);
             }
             else {

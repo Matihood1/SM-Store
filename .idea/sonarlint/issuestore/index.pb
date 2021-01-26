@@ -29,3 +29,15 @@ s
 Capp/src/main/java/com/example/projektsklep/EditProductActivity.java,f\1\f19c288552c128d77d9b622e4df677f6c3050410
 v
 Fapp/src/main/java/com/example/projektsklep/ProductDetailsActivity.java,e\9\e9713a64e39be5dfe59056217a5cfbe96ede29ce
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+R
+"app/src/main/res/values/dimens.xml,c\3\c3c1811dec2dbad2deeafb9aad505ca9631da740
+d
+4app/src/main/res/layout/activity_product_details.xml,e\e\eeffced91ec6124ba7521b717fbc64a2f5b16e8c
+p
+@app/src/main/java/com/example/projektsklep/ProductsFragment.java,a\5\a5ee30e7ac40e83d8e793fa596cbcdd4c199e456
+m
+=app/src/main/java/com/example/projektsklep/UsersFragment.java,c\a\ca8f64816c120859a91c7a84f82b88acbd671ae7
+p
+@app/src/main/java/com/example/projektsklep/EditUserActivity.java,e\3\e32082ddea251ef394df9d4c26abf73857b18ac2

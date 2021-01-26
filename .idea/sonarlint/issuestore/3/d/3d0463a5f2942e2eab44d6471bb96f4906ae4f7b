@@ -1,33 +1,61 @@
 
-M
-java:S5411Ê"*Use the primitive boolean expression here.(ªò•–øÿÿÿÿ8ðíÃ«ò.
-E
-java:S1604n"(Make this anonymous inner class a lambda(Î¬¯”8Î­¾¬î.
-]	java:S125F"<This block of commented-out lines of code should be removed.(«ÖÆêùÿÿÿÿ8•°Àªò.
-X	java:S110%"<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž8”Ãž®í.
+P
+java:S1128"3Remove this unused import 'android.view.ViewGroup'.(‹îá8ÁªÎˆó.
+U
+java:S1128"8Remove this unused import 'android.view.LayoutInflater'.(À¯ÑÇ8öÇÊ…ó.
 K
-java:S1604Ë"(Make this anonymous inner class a lambda(œ°í¢üÿÿÿÿ8Î­¾¬î.
-u
-java:S1450("XRemove the "topAppBar" field and declare it as a local variable in the relevant methods.(ø¯—Ù8òƒ“Öî.
-K
-java:S1604Á"(Make this anonymous inner class a lambda(é¾ùÒýÿÿÿÿ8Î­¾¬î.
+java:S1128".Remove this unused import 'android.view.Menu'.(£¯Ò…8íëù…ó.
+V
+java:S1128#"9Remove this unused import 'com.squareup.picasso.Picasso'.(£œ¿×8ÁªÎˆó.
+^
+java:S1128"<Remove this unused import 'android.content.DialogInterface'.(Š­›¨þÿÿÿÿ8öÇÊ…ó.
+X	java:S125h"<This block of commented-out lines of code should be removed.(èé»Ñ8š“•‰ó.
+S
+java:S1128"6Remove this unused import 'android.view.MenuInflater'.(¥ñ´Ò8ÁªÎˆó.
+O
+java:S1128&"-Remove this unused import 'java.util.Locale'.(åð×±ûÿÿÿÿ8ÁªÎˆó.
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8öÇÊ…ó.
+]	java:S125X"<This block of commented-out lines of code should be removed.(“Ö–ëþÿÿÿÿ8í“ê‹ó.
+h
+java:S1128"FRemove this unused import 'androidx.recyclerview.widget.RecyclerView'.(Îèòçøÿÿÿÿ8ÁªÎˆó.
 „
-java:S3252g"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(½ÑÕ²8Î­¾¬î.
-…
-java:S3252‰"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(½ÑÕ²8ÝîÄ¥ò.
-E
-java:S1604b"(Make this anonymous inner class a lambda(Î¬¯”8Î­¾¬î.
-K
-java:S1125Ê"(Remove the literal "true" boolean value.(ªò•–øÿÿÿÿ8Î­¾¬î.
-]	java:S125T"<This block of commented-out lines of code should be removed.(µ”À€ùÿÿÿÿ8Šñ®¹ð.
-K
-java:S1604­"(Make this anonymous inner class a lambda(žé°¤üÿÿÿÿ8±ýºÖî.
-…
-java:S3252ƒ"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(½ÑÕ²8ê‹ ¥ò.
-K
-java:S1604¦"(Make this anonymous inner class a lambda(ÿÙ…­þÿÿÿÿ8±ýºÖî.
-K
-java:S1604î"(Make this anonymous inner class a lambda(úä›Ðþÿÿÿÿ8Õý±¬ò.
+java:S1128 "bRemove this unused import 'com.google.android.material.floatingactionbutton.FloatingActionButton'.(ôˆêãÿÿÿÿÿ8ÁªÎˆó.
+o
+java:S1128"MRemove this unused import 'androidx.recyclerview.widget.LinearLayoutManager'.(ôœ¹ºýÿÿÿÿ8±Åå…ó.
+V
+java:S1128"9Remove this unused import 'androidx.annotation.Nullable'.(¾Èêš8±Åå…ó.
+Q
+java:S3740O"/Provide the parametrized type for this generic.(ù‘´ëýÿÿÿÿ8š“•‰ó.
+W
+java:S1128"5Remove this unused import 'android.widget.ImageView'.(ú¯ëàüÿÿÿÿ8öÇÊ…ó.
+X
+java:S1128"6Remove this unused import 'android.widget.SearchView'.(ÆÆÆ£ýÿÿÿÿ8íëù…ó.
+g
+java:S1128""JRemove this unused import 'com.google.android.material.snackbar.Snackbar'.(ë„ƒŠ8ÐÝè…ó.
+H
+java:S1905D"+Remove this unnecessary cast to "Fragment".(¿—ƒ’8óÛŽ‰ó.
+Y
+java:S1068,"7Remove this unused "fragmentFrameLayout" private field.(à»é°úÿÿÿÿ8ÁªÎˆó.
 z
-java:S1450)"]Remove the "navigationView" field and declare it as a local variable in the relevant methods.(‰Ë”ë8Á– Öî.
-]	java:S125D"<This block of commented-out lines of code should be removed.(Äÿ®þÿÿÿÿ8¦˜çªò.
+java:S1450*"]Remove the "navigationView" field and declare it as a local variable in the relevant methods.(‰Ë”ë8ÁªÎˆó.
+M
+java:S1128%"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8íëù…ó.
+X	java:S110("<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž8ÁªÎˆó.
+J
+java:S1604<"(Make this anonymous inner class a lambda(ÿÙ…­þÿÿÿÿ8Œôúˆó.
+u
+java:S1450)"XRemove the "topAppBar" field and declare it as a local variable in the relevant methods.(ø¯—Ù8òƒ“Öî.
+V
+java:S1128"4Remove this unused import 'android.app.AlertDialog'.(ª½øþüÿÿÿÿ8öÇÊ…ó.
+\
+java:S1128":Remove this unused import 'android.icu.text.NumberFormat'.(—³Ü×øÿÿÿÿ8ÁªÎˆó.
+J
+java:S1604K"(Make this anonymous inner class a lambda(žé°¤üÿÿÿÿ8š“•‰ó.
+Z
+java:S1128	"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉþÿÿÿÿ8ÁªÎˆó.
+]	java:S125N"<This block of commented-out lines of code should be removed.(Ü¯¹þÿÿÿÿ8š“•‰ó.
+V
+java:S1128"4Remove this unused import 'android.widget.TextView'.(„Ë‚ˆÿÿÿÿÿ8ÁªÎˆó.
+O
+java:S1128"3Remove this unused import 'android.content.Intent'.(³ð‹G8ÐÝè…ó.

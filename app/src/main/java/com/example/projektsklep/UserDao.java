@@ -27,4 +27,7 @@ public interface UserDao {
 
     @Query("SELECT * FROM user WHERE email = :email COLLATE NOCASE AND password = :password")
     public User findUserByCredentials(String email, String password);
+
+    @Query("SELECT * FROM user WHERE email LIKE :text OR firstName LIKE :text OR lastName LIKE :text")
+    public List<User> findUserByNameOrEmail(String text);
 }

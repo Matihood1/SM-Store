@@ -5,6 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductsFragment"
-    tools:listitem="@layout/product_list_item"
-    android:id="@+id/products_recyclerview" />
+    tools:context=".UsersFragment"
+    tools:listitem="@layout/user_list_item"
+    android:id="@+id/users_recyclerview" />

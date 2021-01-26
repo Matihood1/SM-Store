@@ -32,6 +32,8 @@ public class StoreRepository {
         return userDao.findUserByCredentials(email, password);
     }
 
+    List<User> findUserWithNameOrEmail(String text) { return userDao.findUserByNameOrEmail(text); }
+
     LiveData<Product> findProductById(int id) {
         return productDao.findViewById(id);
     }

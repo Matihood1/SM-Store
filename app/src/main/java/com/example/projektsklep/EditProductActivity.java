@@ -184,14 +184,14 @@ public class EditProductActivity extends AppCompatActivity {
         descriptionEditText = findViewById(R.id.edit_product_description);
         saveProductButton = findViewById(R.id.edit_product_save);
 
-        if (getIntent().hasExtra(MainActivity.EXTRA_PRODUCT_DATA)) {
-            selectedProduct = (Product) getIntent().getSerializableExtra(MainActivity.EXTRA_PRODUCT_DATA);
+        if (getIntent().hasExtra(ProductsFragment.EXTRA_PRODUCT_DATA)) {
+            selectedProduct = (Product) getIntent().getSerializableExtra(ProductsFragment.EXTRA_PRODUCT_DATA);
             nameEditText.setText(selectedProduct.getName());
             priceEditText.setText(String.valueOf(selectedProduct.getPrice()));
             descriptionEditText.setText(selectedProduct.getDescription());
             if (selectedProduct.getImageUrl() != null && !selectedProduct.getImageUrl().trim().isEmpty()) {
                 Picasso.get()
-                        .load(MainActivity.IMAGE_URL_BASE + selectedProduct.getImageUrl() + ".jpg")
+                        .load(ProductsFragment.IMAGE_URL_BASE + selectedProduct.getImageUrl() + ".jpg")
                         .placeholder(R.drawable.ic_baseline_image_24dp).into(imageView);
             }
             else {
@@ -297,7 +297,7 @@ public class EditProductActivity extends AppCompatActivity {
                         if(imageLink != null && !imageLink.isEmpty()) {
                             selectedProduct.setImageUrl(imageLink);
                         }
-                        replyIntent.putExtra(MainActivity.EXTRA_PRODUCT_DATA, selectedProduct);
+                        replyIntent.putExtra(ProductsFragment.EXTRA_PRODUCT_DATA, selectedProduct);
                         setResult(RESULT_OK, replyIntent);
 
                     /*if(currentPhotoPath != null && !currentPhotoPath.isEmpty()) {

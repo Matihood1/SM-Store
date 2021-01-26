@@ -27,6 +27,7 @@ public class StoreViewModel extends AndroidViewModel {
     public User findUserByCredentials(String email, String password) {
         return storeRepository.findUserByCredentials(email, password);
     }
+    public List<User> findUserWithNameOrEmail(String text) { return storeRepository.findUserWithNameOrEmail(text); }
     public LiveData<Product> findProductById(int id) {
         return storeRepository.findProductById(id);
     }

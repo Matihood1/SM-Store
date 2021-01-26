@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
@@ -162,18 +163,24 @@ public class RegistrationActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent replyIntent = new Intent();
                 if(firstNameLayout.getError() == null && lastNameLayout.getError() == null && emailLayout.getError() == null &&
                 passwordLayout.getError() == null && passwordConfirmLayout.getError() == null) {
-                    Intent replyIntent = new Intent();
-                    String firstName = firstNameEditText.getText().toString();
-                    replyIntent.putExtra(EXTRA_FIRST_NAME, firstName);
-                    String lastName = lastNameEditText.getText().toString();
-                    replyIntent.putExtra(EXTRA_LAST_NAME, lastName);
-                    String email = emailEditText.getText().toString();
-                    replyIntent.putExtra(EXTRA_EMAIL, email);
-                    String password = passwordEditText.getText().toString();
-                    replyIntent.putExtra(EXTRA_PASSWORD, password);
-                    setResult(RESULT_OK, replyIntent);
+                    if(TextUtils.isEmpty(firstNameEditText.getText()) || TextUtils.isEmpty(lastNameEditText.getText()) ||
+                            TextUtils.isEmpty((emailEditText.getText())) || TextUtils.isEmpty((passwordEditText.getText())) ||
+                            TextUtils.isEmpty((passwordConfirmEditText.getText()))) {
+                        setResult(RESULT_CANCELED, replyIntent);
+                    } else {
+                        String firstName = firstNameEditText.getText().toString();
+                        replyIntent.putExtra(EXTRA_FIRST_NAME, firstName);
+                        String lastName = lastNameEditText.getText().toString();
+                        replyIntent.putExtra(EXTRA_LAST_NAME, lastName);
+                        String email = emailEditText.getText().toString();
+                        replyIntent.putExtra(EXTRA_EMAIL, email);
+                        String password = passwordEditText.getText().toString();
+                        replyIntent.putExtra(EXTRA_PASSWORD, password);
+                        setResult(RESULT_OK, replyIntent);
+                    }
                     finish();
                 }
             }
