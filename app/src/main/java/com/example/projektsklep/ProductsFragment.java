@@ -16,9 +16,9 @@ import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -160,9 +160,6 @@ public class ProductsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        parentActivity = (MainActivity)getActivity();
-        currentUser = parentActivity.currentUser;
-        storeViewModel = parentActivity.storeViewModel;
         setHasOptionsMenu(true);
     }
 
@@ -172,6 +169,8 @@ public class ProductsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_products, container, false);
 
+        parentActivity = (MainActivity)getActivity();
+        storeViewModel = parentActivity.storeViewModel;
         if (parentActivity.getIntent().hasExtra(LoginActivity.EXTRA_LOGIN_USER)) {
             currentUser = (User)parentActivity.getIntent().getSerializableExtra(LoginActivity.EXTRA_LOGIN_USER);
         }

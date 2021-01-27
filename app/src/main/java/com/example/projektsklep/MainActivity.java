@@ -1,41 +1,24 @@
 package com.example.projektsklep;
 
+import android.content.Context;
+import android.content.Intent;
+import android.hardware.SensorManager;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.icu.text.NumberFormat;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.SearchView;
-import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-import com.squareup.picasso.Picasso;
-
-import java.util.List;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private MaterialToolbar topAppBar;
@@ -44,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout fragmentFrameLayout;
     protected StoreViewModel storeViewModel;
     protected User currentUser;
+    protected LightSensor lightSensor;
     private Fragment currentFragment;
+    private static final String ACCURACY_TAG = "AccuracyChange";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +41,22 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigation_view);
         drawerLayout = findViewById(R.id.drawer_layout);
         storeViewModel = new ViewModelProvider(this).get(StoreViewModel.class);
+
+        lightSensor = LoginActivity.lightSensor;
+
+        if (getIntent().hasExtra(LoginActivity.EXTRA_LOGIN_USER)) {
+            currentUser = (User)getIntent().getSerializableExtra(LoginActivity.EXTRA_LOGIN_USER);
+        }
+
+        View headerView = navigationView.getHeaderView(0);
+        ((TextView) headerView.findViewById(R.id.header_user_name)).setText(currentUser.getFirstName() +
+                " " + currentUser.getLastName());
+        ((TextView) headerView.findViewById(R.id.header_user_email)).setText(currentUser.getEmail());
+
+        if(currentUser.getAdmin() != true) {
+            MenuItem menuItem = navigationView.getMenu().findItem(R.id.item_users);
+            menuItem.setVisible(false);
+        }
 
         topAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                //Fragment fragment = null;
                 Class fragmentClass;
                 switch(item.getItemId()) {
                     case R.id.item_products:
@@ -112,4 +112,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(lightSensor != null) {
+            lightSensor.onStart();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(lightSensor != null) {
+            lightSensor.onPause();
+        }
+    }
+
+    /*@Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (getIntent().hasExtra(LoginActivity.EXTRA_LOGIN_USER)) {
+            currentUser = (User) getIntent().getSerializableExtra(LoginActivity.EXTRA_LOGIN_USER);
+        }
+    }*/
 }

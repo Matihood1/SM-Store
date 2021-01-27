@@ -1,22 +1,23 @@
 package com.example.projektsklep;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.squareup.picasso.Picasso;
 
 public class ProductDetailsActivity extends AppCompatActivity {
-    ImageView imageView;
-    TextView nameTextView;
-    TextView priceTextView;
-    TextView descriptionTextView;
-    Button purchaseButton;
-    Product selectedProduct;
+    private ImageView imageView;
+    private TextView nameTextView;
+    private TextView priceTextView;
+    private TextView descriptionTextView;
+    private Button purchaseButton;
+    private Product selectedProduct;
+    private LightSensor lightSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         priceTextView = findViewById(R.id.product_details_price);
         descriptionTextView = findViewById(R.id.product_details_description);
         purchaseButton = findViewById(R.id.product_purchase_button);
+
+        lightSensor = LoginActivity.lightSensor;
 
         if (getIntent().hasExtra(ProductsFragment.EXTRA_PRODUCT_DATA)) {
             selectedProduct = (Product) getIntent().getSerializableExtra(ProductsFragment.EXTRA_PRODUCT_DATA);
@@ -53,5 +56,21 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(lightSensor != null) {
+            lightSensor.onStart();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(lightSensor != null) {
+            lightSensor.onPause();
+        }
     }
 }

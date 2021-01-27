@@ -1,7 +1,5 @@
 package com.example.projektsklep;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,19 +10,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.squareup.picasso.Picasso;
 
 public class EditUserActivity extends AppCompatActivity {
     private User selectedUser;
     private User currentUser;
-    private String imageLink;
-    private ImageView imageView;
-    private Button setImageButton;
-    private Button saveImageButton;
+    private TextView editUserTextView;
     private TextInputLayout firstNameLayout;
     private TextInputEditText firstNameEditText;
     private TextInputLayout lastNameLayout;
@@ -35,12 +31,14 @@ public class EditUserActivity extends AppCompatActivity {
     private TextInputEditText passwordEditText;
     private CheckBox adminCheckBox;
     private Button saveUserButton;
+    private LightSensor lightSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user);
 
+        editUserTextView = findViewById(R.id.edit_user_title);
         firstNameLayout = findViewById(R.id.user_firstname_layout);
         firstNameEditText = findViewById(R.id.user_firstname);
         lastNameLayout = findViewById(R.id.user_lastname_layout);
@@ -52,16 +50,22 @@ public class EditUserActivity extends AppCompatActivity {
         adminCheckBox = findViewById(R.id.user_admin_checkbox);
         saveUserButton = findViewById(R.id.edit_user_save);
 
+        lightSensor = LoginActivity.lightSensor;
+
         if (getIntent().hasExtra(LoginActivity.EXTRA_LOGIN_USER)) {
             currentUser = (User) getIntent().getSerializableExtra(LoginActivity.EXTRA_LOGIN_USER);
         }
         if (getIntent().hasExtra(UsersFragment.EXTRA_USER_DATA)) {
+            editUserTextView.setText(getString(R.string.edit_user));
             selectedUser = (User) getIntent().getSerializableExtra(UsersFragment.EXTRA_USER_DATA);
             firstNameEditText.setText(selectedUser.getFirstName());
             lastNameEditText.setText(String.valueOf(selectedUser.getLastName()));
             emailEditText.setText(selectedUser.getEmail());
             passwordEditText.setText(selectedUser.getPassword());
             adminCheckBox.setChecked(selectedUser.getAdmin());
+        }
+        else {
+            editUserTextView.setText(getString(R.string.add_user));
         }
 
         firstNameEditText.addTextChangedListener(new TextWatcher() {
@@ -139,7 +143,7 @@ public class EditUserActivity extends AppCompatActivity {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(adminCheckBox.isChecked() != selectedUser.getAdmin()) {
-                        adminCheckBox.setError(getString(R.string.changing_admin_for_yourelf));
+                        adminCheckBox.setError(getString(R.string.changing_admin_for_yourself));
                     }
                     else {
                         adminCheckBox.setError(null);
@@ -198,5 +202,21 @@ public class EditUserActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(lightSensor != null) {
+            lightSensor.onStart();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(lightSensor != null) {
+            lightSensor.onPause();
+        }
     }
 }

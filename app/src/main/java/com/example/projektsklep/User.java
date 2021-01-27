@@ -1,7 +1,8 @@
 package com.example.projektsklep;
 
 import androidx.annotation.NonNull;
-import androidx.room.*;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 

@@ -49,13 +49,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/login_button"
-            android:layout_marginRight="@dimen/big_padding"
+            android:layout_marginRight="@dimen/medium_margin"
             android:text="@string/log_in" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/login_register_button"
-            android:layout_marginLeft="@dimen/big_padding"
+            android:layout_marginLeft="@dimen/medium_margin"
             android:text="@string/register" />
     </LinearLayout>
 </LinearLayout>

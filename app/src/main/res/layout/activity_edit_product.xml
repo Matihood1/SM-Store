@@ -17,8 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:maxWidth="250dp"
-            android:maxHeight="250dp"
+            android:maxWidth="@dimen/image_edit_product_max_dimens"
+            android:maxHeight="@dimen/image_edit_product_max_dimens"
             android:adjustViewBounds="true"
             android:contentDescription="@string/product_image" />
 
@@ -31,7 +31,7 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/big_padding"
+                android:layout_marginRight="@dimen/medium_margin"
                 android:text="@string/set_image" />
 
             <Button
@@ -39,7 +39,7 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/big_padding"
+                android:layout_marginLeft="@dimen/medium_margin"
                 android:text="@string/save_image" />
         </LinearLayout>
 

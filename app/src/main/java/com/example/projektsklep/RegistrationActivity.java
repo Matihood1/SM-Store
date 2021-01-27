@@ -1,7 +1,5 @@
 package com.example.projektsklep;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,6 +8,8 @@ import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -20,6 +20,13 @@ public class RegistrationActivity extends AppCompatActivity {
     public static final String EXTRA_LAST_NAME = "EXTRA_LAST_NAME";
     public static final String EXTRA_EMAIL = "EXTRA_EMAIL";
     public static final String EXTRA_PASSWORD = "EXTRA_PASSWORD";
+    public static final String KEY_FIRSTNAME_ERROR = "KEY_FIRSTNAME_ERROR";
+    public static final String KEY_LASTNAME_ERROR = "KEY_LASTNAME_ERROR";
+    public static final String KEY_EMAIL_ERROR = "KEY_EMAIL_ERROR";
+    public static final String KEY_PASSWORD_ERROR = "KEY_PASSWORD_ERROR";
+    public static final String KEY_PASSWORD_CONFIRM_ERROR = "KEY_PASSWORD_CONFIRM_ERROR";
+
+
 
     private TextInputLayout firstNameLayout;
     private TextInputEditText firstNameEditText;
@@ -33,6 +40,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextInputEditText passwordConfirmEditText;
     private Button registerButton;
     private Button cancelButton;
+    private LightSensor lightSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +59,8 @@ public class RegistrationActivity extends AppCompatActivity {
         passwordConfirmEditText = findViewById(R.id.registration_password_confirm);
         registerButton = findViewById(R.id.register_button);
         cancelButton = findViewById(R.id.registration_cancel_button);
+
+        lightSensor = LoginActivity.lightSensor;
 
         firstNameEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -193,5 +203,21 @@ public class RegistrationActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(lightSensor != null) {
+            lightSensor.onStart();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(lightSensor != null) {
+            lightSensor.onPause();
+        }
     }
 }

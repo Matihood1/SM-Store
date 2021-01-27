@@ -12,15 +12,15 @@
         android:gravity="center"
         android:layout_gravity="center">
         <TextView
+            android:id="@+id/edit_user_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/edit_user"
             android:textSize="@dimen/title_text_size"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user_firstname"
+            android:hint="@string/user_first_name"
             android:id="@+id/user_firstname_layout"
             style="@style/EditTextCustomStyle">
 
@@ -33,7 +33,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user_lastname"
+            android:hint="@string/user_last_name"
             android:id="@+id/user_lastname_layout"
             style="@style/EditTextCustomStyle">
 

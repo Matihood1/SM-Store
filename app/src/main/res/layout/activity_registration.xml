@@ -20,7 +20,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user_firstname"
+            android:hint="@string/user_first_name"
             android:id="@+id/registration_firstname_layout"
             style="@style/EditTextCustomStyle">
 
@@ -33,7 +33,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user_lastname"
+            android:hint="@string/user_last_name"
             android:id="@+id/registration_lastname_layout"
             style="@style/EditTextCustomStyle">
 
@@ -94,13 +94,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/register_button"
-                android:layout_marginRight="@dimen/big_padding"
+                android:layout_marginRight="@dimen/medium_margin"
                 android:text="@string/register" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/registration_cancel_button"
-                android:layout_marginLeft="@dimen/big_padding"
+                android:layout_marginLeft="@dimen/medium_margin"
                 android:text="@string/cancel" />
         </LinearLayout>
     </LinearLayout>

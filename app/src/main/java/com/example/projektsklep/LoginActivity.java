@@ -1,27 +1,23 @@
 package com.example.projektsklep;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.List;
-
 public class LoginActivity extends AppCompatActivity {
 
     public static final String EXTRA_LOGIN_USER = "LOGIN_USER";
+    public static final String EXTRA_LIGHT_SENSOR = "LIGHT_SENSOR";
     public static final int REGISTER_USER_ACTIVITY_REQUEST_CODE = 1;
 
     private TextInputLayout emailLayout;
@@ -30,7 +26,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputEditText passwordEditText;
     private Button loginButton;
     private Button registerButton;
-    StoreViewModel storeViewModel;
+    private StoreViewModel storeViewModel;
+    public static LightSensor lightSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
         registerButton = findViewById(R.id.login_register_button);
+
+        lightSensor = new LightSensor((SensorManager) getSystemService(Context.SENSOR_SERVICE));
 
         storeViewModel = new ViewModelProvider(this).get(StoreViewModel.class);
 
@@ -82,6 +81,22 @@ public class LoginActivity extends AppCompatActivity {
                 storeViewModel.insert(user);
                 Snackbar.make(findViewById(R.id.login_linear_layout), R.string.user_created, Snackbar.LENGTH_LONG).show();
             }
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(lightSensor != null) {
+            lightSensor.onStart();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(lightSensor != null) {
+            lightSensor.onPause();
         }
     }
 }

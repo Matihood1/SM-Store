@@ -31,10 +31,6 @@ v
 Fapp/src/main/java/com/example/projektsklep/ProductDetailsActivity.java,e\9\e9713a64e39be5dfe59056217a5cfbe96ede29ce
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-R
-"app/src/main/res/values/dimens.xml,c\3\c3c1811dec2dbad2deeafb9aad505ca9631da740
-d
-4app/src/main/res/layout/activity_product_details.xml,e\e\eeffced91ec6124ba7521b717fbc64a2f5b16e8c
 p
 @app/src/main/java/com/example/projektsklep/ProductsFragment.java,a\5\a5ee30e7ac40e83d8e793fa596cbcdd4c199e456
 m

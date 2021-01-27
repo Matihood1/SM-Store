@@ -1,11 +1,5 @@
 package com.example.projektsklep;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -22,6 +16,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
@@ -65,6 +65,7 @@ public class EditProductActivity extends AppCompatActivity {
     private TextInputEditText descriptionEditText;
     private Button saveProductButton;
     private boolean imageUploaded = true;
+    private LightSensor lightSensor;
 
     private File createImageFile() throws IOException {
         // Create an image file name
@@ -183,6 +184,8 @@ public class EditProductActivity extends AppCompatActivity {
         descriptionLayout = findViewById(R.id.edit_product_description_layout);
         descriptionEditText = findViewById(R.id.edit_product_description);
         saveProductButton = findViewById(R.id.edit_product_save);
+
+        lightSensor = LoginActivity.lightSensor;
 
         if (getIntent().hasExtra(ProductsFragment.EXTRA_PRODUCT_DATA)) {
             selectedProduct = (Product) getIntent().getSerializableExtra(ProductsFragment.EXTRA_PRODUCT_DATA);
@@ -329,6 +332,22 @@ public class EditProductActivity extends AppCompatActivity {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                 Snackbar.make(findViewById(R.id.edit_product_layout), R.string.camera_permission_denied, Snackbar.LENGTH_LONG).show();
             }
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(lightSensor != null) {
+            lightSensor.onStart();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(lightSensor != null) {
+            lightSensor.onPause();
         }
     }
 }
