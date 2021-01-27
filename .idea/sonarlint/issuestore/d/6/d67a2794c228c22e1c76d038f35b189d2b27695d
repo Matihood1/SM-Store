@@ -1,30 +1,30 @@
 
-O
-java:S1068"2Remove this unused "passwordLayout" private field.(¥£Ž±8«¤˜§î.
-w
-java:S1450"ZRemove the "loginButton" field and declare it as a local variable in the relevant methods.(à…÷Ÿ8«¤˜§î.
-J
-java:S16040"(Make this anonymous inner class a lambda(«–Âæþÿÿÿÿ8«¤˜§î.
-Q
-java:S1066N"/Merge this if statement with the enclosing one.(±„‘‰ýÿÿÿÿ8«¤˜§î.
-w
-java:S1450"ZRemove the "emailLayout" field and declare it as a local variable in the relevant methods.(³ÊÚ‘8«¤˜§î.
-z
-java:S1450"]Remove the "passwordLayout" field and declare it as a local variable in the relevant methods.(¥£Ž±8«¤˜§î.
-J
-java:S1604@"(Make this anonymous inner class a lambda(ºÁöïûÿÿÿÿ8«¤˜§î.
-t
-java:S1104"WMake lightSensor a static final constant or non-public and provide accessors if needed.(î‡Çƒ8•‘ÇŠô.
-‰
-java:S3252R"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(û—ÌŽøÿÿÿÿ8«¤˜§î.
-N
-java:S1444"1Make this "public static lightSensor" field final(î‡Çƒ8•‘ÇŠô.
-V	java:S110"<This class has 9 parents which is greater than 5 authorized.(·¡ïõøÿÿÿÿ
-S
-java:S2696,"6Make the enclosing method "static" or remove this set.( è¤Ž8•‘ÇŠô.
-‰
-java:S3252;"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(Éûäßúÿÿÿÿ8½èÌßñ.
 y
-java:S1450"]Remove the "registerButton" field and declare it as a local variable in the relevant methods.(›­®d8¥ÖÔ¯í.
+java:S1450#"]Remove the "registerButton" field and declare it as a local variable in the relevant methods.(›­®d8¥ÖÔ¯í.
+t
+java:S1104%"WMake lightSensor a static final constant or non-public and provide accessors if needed.(î‡Çƒ8•‘ÇŠô.
+J
+java:S16047"(Make this anonymous inner class a lambda(«–Âæþÿÿÿÿ8«¤˜§î.
+‰
+java:S3252B"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(Éûäßúÿÿÿÿ8½èÌßñ.
+Q
+java:S1066Z"/Merge this if statement with the enclosing one.(±„‘‰ýÿÿÿÿ8ÌÈáô.
+S
+java:S26963"6Make the enclosing method "static" or remove this set.( è¤Ž8•‘ÇŠô.
+w
+java:S1450""ZRemove the "loginButton" field and declare it as a local variable in the relevant methods.(à…÷Ÿ8«¤˜§î.
+w
+java:S1450"ZRemove the "emailLayout" field and declare it as a local variable in the relevant methods.(³ÊÚ‘8«¤˜§î.
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(·¡ïõøÿÿÿÿ
+N
+java:S1444%"1Make this "public static lightSensor" field final(î‡Çƒ8•‘ÇŠô.
+O
+java:S1068 "2Remove this unused "passwordLayout" private field.(¥£Ž±8«¤˜§î.
 L
-java:S1068"/Remove this unused "emailLayout" private field.(³ÊÚ‘8«¤˜§î.
+java:S1068"/Remove this unused "emailLayout" private field.(³ÊÚ‘8«¤˜§î.
+J
+java:S1604G"(Make this anonymous inner class a lambda(ºÁöïûÿÿÿÿ8«¤˜§î.
+z
+java:S1450 "]Remove the "passwordLayout" field and declare it as a local variable in the relevant methods.(¥£Ž±8«¤˜§î.
+‰
+java:S3252^"gUse static access with "com.google.android.material.snackbar.BaseTransientBottomBar" for "LENGTH_LONG".(û—ÌŽøÿÿÿÿ8ÌÈáô.

@@ -1,28 +1,22 @@
 
-J
-java:S1604<"(Make this anonymous inner class a lambda(ÿÙ…­şÿÿÿÿ8©„Ü‰ô.
-z
-java:S1450"]Remove the "navigationView" field and declare it as a local variable in the relevant methods.(‰Ë”ë8©„Ü‰ô.
-Q
-java:S3740N"/Provide the parametrized type for this generic.(ù‘´ëıÿÿÿÿ8©„Ü‰ô.
-H
-java:S1905D"+Remove this unnecessary cast to "Fragment".(¿—ƒ’8©„Ü‰ô.
 Y
-java:S1068"7Remove this unused "fragmentFrameLayout" private field.(à»é°úÿÿÿÿ8©„Ü‰ô.
-X	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±8©„Ü‰ô.
+java:S1068"7Remove this unused "fragmentFrameLayout" private field.(à»é°úÿÿÿÿ8©„Ü‰ô.
 Q
-java:S1128"4Remove this unused import 'android.content.Context'.(©Ê‰è8†×Šô.
-L
-java:S54117"*Use the primitive boolean expression here.(ÃğÌËÿÿÿÿÿ8à¨¢‹ô.
-O
-java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8™‹ÊŠô.
-Y	java:S125„"<This block of commented-out lines of code should be removed.(Ñ‚«µ8ÇÊú‰ô.
+java:S3740K"/Provide the parametrized type for this generic.(ù‘´ëıÿÿÿÿ8©„Ü‰ô.
 u
-java:S1450"XRemove the "topAppBar" field and declare it as a local variable in the relevant methods.(ø¯—Ù8©„Ü‰ô.
+java:S1450"XRemove the "topAppBar" field and declare it as a local variable in the relevant methods.(ø¯—Ù8©„Ü‰ô.
 J
-java:S1604K"(Make this anonymous inner class a lambda(é°¤üÿÿÿÿ8©„Ü‰ô.
-]
-java:S1128";Remove this unused import 'android.hardware.SensorManager'.(ªè½ôûÿÿÿÿ8†×Šô.
+java:S11254"(Remove the literal "true" boolean value.(ÃğÌËÿÿÿÿÿ8à¨¢‹ô.
+X	java:S125i"<This block of commented-out lines of code should be removed.(èé»Ñ8©„Ü‰ô.
 J
-java:S11257"(Remove the literal "true" boolean value.(ÃğÌËÿÿÿÿÿ8à¨¢‹ô.
-X	java:S125l"<This block of commented-out lines of code should be removed.(èé»Ñ8©„Ü‰ô.
+java:S16049"(Make this anonymous inner class a lambda(ÿÙ…­şÿÿÿÿ8©„Ü‰ô.
+X	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±8©„Ü‰ô.
+L
+java:S54114"*Use the primitive boolean expression here.(ÃğÌËÿÿÿÿÿ8à¨¢‹ô.
+Y	java:S125"<This block of commented-out lines of code should be removed.(Ñ‚«µ8ÇÊú‰ô.
+J
+java:S1604H"(Make this anonymous inner class a lambda(é°¤üÿÿÿÿ8©„Ü‰ô.
+H
+java:S1905A"+Remove this unnecessary cast to "Fragment".(¿—ƒ’8©„Ü‰ô.
+z
+java:S1450"]Remove the "navigationView" field and declare it as a local variable in the relevant methods.(‰Ë”ë8©„Ü‰ô.

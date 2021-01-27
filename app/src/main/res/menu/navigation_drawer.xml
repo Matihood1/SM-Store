@@ -17,9 +17,9 @@
         android:id="@+id/group_middle"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/item_settings"
-            android:icon="@drawable/ic_baseline_settings_24dp"
-            android:title="@string/settings" />
+            android:id="@+id/item_contact"
+            android:icon="@drawable/ic_baseline_mail_24dp"
+            android:title="@string/contact" />
     </group>
     <group
         android:id="@+id/group_bottom"

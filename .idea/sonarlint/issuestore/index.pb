@@ -43,3 +43,9 @@ k
 -app/src/main/res/layout/product_list_item.xml,0\9\09b85101de495b5782f8a9d65d16d0262e38a600
 Z
 *app/src/main/res/layout/user_list_item.xml,4\c\4cfbd8a55fca8fb1cf0be2f97105e6c1fb0c76f0
+a
+1app/src/main/res/layout/activity_edit_product.xml,2\1\21b525199ecb88244615441dca171d8ff43661f8
+R
+"app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
+R
+"app/src/main/res/values/dimens.xml,c\3\c3c1811dec2dbad2deeafb9aad505ca9631da740

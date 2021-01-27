@@ -35,6 +35,9 @@ public class UsersFragment extends Fragment {
     private RecyclerView recyclerView;
     private StoreViewModel storeViewModel;
     private MainActivity parentActivity;
+    private List<User> userList;
+    private SearchView searchView;
+    private Bundle resumedInstanceState;
 
 
     private class UserHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
@@ -167,6 +170,7 @@ public class UsersFragment extends Fragment {
             @Override
             public void onChanged(@Nullable final List<User> users) {
                 adapter.setUsers(users);
+                userList = users;
             }
         });
 
@@ -210,7 +214,7 @@ public class UsersFragment extends Fragment {
 
         MenuItem searchItem = menu.findItem(R.id.menu_item_search);
         MenuItem clearSearchItem = menu.findItem(R.id.menu_item_clear);
-        final SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView = (SearchView) searchItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -223,15 +227,43 @@ public class UsersFragment extends Fragment {
                 return false;
             }
         });
+        if(resumedInstanceState != null) {
+            searchView.setQuery(resumedInstanceState.getString(MainActivity.KEY_SEARCH_TERM), true);
+            searchView.setIconified(false);
+            searchView.requestFocus();
+            resumedInstanceState = null;
+        }
         clearSearchItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 searchView.setQuery("", false);
                 searchView.clearFocus();
-                ((UsersFragment.UserAdapter)recyclerView.getAdapter()).notifyDataSetChanged();
+                ((UsersFragment.UserAdapter)recyclerView.getAdapter()).setUsers(userList);
+                //((UsersFragment.UserAdapter)recyclerView.getAdapter()).notifyDataSetChanged();
                 return true;
             }
         });
         super.onCreateOptionsMenu(menu,inflater);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState != null) {
+            resumedInstanceState = savedInstanceState;
+        }
+        /*if(savedInstanceState != null) {
+            searchView.setQuery(savedInstanceState.getString(MainActivity.KEY_SEARCH_TERM), true);
+        }*/
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if(searchView.getQuery() != null && !searchView.getQuery().toString().isEmpty()) {
+            if(searchView.getQuery() != null && !searchView.getQuery().toString().isEmpty()) {
+                outState.putString(MainActivity.KEY_SEARCH_TERM, searchView.getQuery().toString());
+            }
+        }
     }
 }

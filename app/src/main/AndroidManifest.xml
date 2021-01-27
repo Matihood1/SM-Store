@@ -18,7 +18,8 @@
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".EditProductActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".RegistrationActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>

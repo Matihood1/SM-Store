@@ -26,7 +26,7 @@
     <string name="search">Szukaj</string>
     <string name="clear_search">Wyczyść wyszukiwanie</string>
     <string name="products">Produkty</string>
-    <string name="settings">Ustawienia</string>
+    <string name="contact">Kontakt</string>
     <string name="users">Użytkownicy</string>
     <string name="log_out">Wyloguj</string>
     <string name="button_save">Zapisz</string>
@@ -56,4 +56,6 @@
     <string name="email_body">Witaj, %s!\n\nDziękujemy za dokonanie zakupu: %s!\n\nTransakcja
     jest obecnie w trakcie przetwarzania. Zostaniesz poinformowany, gdy będzie można podjąć kolejne kroki.\n\n
     Z poważaniem,\n\nSMProj. sp. z.o.o.</string>
+    <string name="email_clients_not_found">Nie znaleziono żadnego klienta email.</string>
+    <string name="send_mail">Wyślij maila…</string>
 </resources>

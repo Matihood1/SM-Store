@@ -67,8 +67,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 BackgroundMail.newBuilder(ProductDetailsActivity.this)
                         .withMailBox("smtp.gmail.com", 465, true)
-                        .withFrom("SMkontoprojekt@gmail.com")
-                        .withUsername("SMkontoprojekt@gmail.com")
+                        .withFrom(MainActivity.companyEmailAddress)
+                        .withUsername(MainActivity.companyEmailAddress)
                         .withPassword("1qaz@wsx3edC")
                         .withSenderName("SMProj sp. z.o.o.")
                         .withMailTo(currentUser.getEmail())

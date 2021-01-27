@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     private MaterialToolbar topAppBar;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected User currentUser;
     protected LightSensor lightSensor;
     private Fragment currentFragment;
+    public static String companyEmailAddress = "SMkontoprojekt@gmail.com";
+
+    public static final String KEY_SEARCH_TERM = "KEY_SEARCH_TERM";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +70,10 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.fragment_framelayout, currentFragment).commit();
+        if(savedInstanceState == null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_framelayout, currentFragment).commit();
+        }
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -79,6 +85,19 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.item_users:
                         fragmentClass = UsersFragment.class;
+                        break;
+                    case R.id.item_contact:
+                        fragmentClass = null;
+                        Intent i = new Intent(Intent.ACTION_SEND);
+                        i.setType("message/rfc822");
+                        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{companyEmailAddress});
+                        i.putExtra(Intent.EXTRA_SUBJECT, "");
+                        i.putExtra(Intent.EXTRA_TEXT   , "");
+                        try {
+                            startActivity(Intent.createChooser(i, getString(R.string.send_mail)));
+                        } catch (android.content.ActivityNotFoundException ex) {
+                            Snackbar.make(findViewById(R.id.coordinator_layout), getString(R.string.user_not_found), Snackbar.LENGTH_LONG).show();
+                        }
                         break;
                     case R.id.item_logout:
                         fragmentClass = null;
