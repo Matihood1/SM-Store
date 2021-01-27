@@ -1,10 +1,7 @@
 package com.example.projektsklep;
 
-import android.content.Context;
 import android.content.Intent;
-import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -29,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     protected User currentUser;
     protected LightSensor lightSensor;
     private Fragment currentFragment;
-    private static final String ACCURACY_TAG = "AccuracyChange";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

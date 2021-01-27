@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class, Product.class}, version = 3, exportSchema = false)
+@Database(entities = {User.class, Product.class}, version = 4, exportSchema = false)
 public abstract class StoreDatabase extends RoomDatabase {
     public abstract UserDao userDao();
     public abstract ProductDao productDao();
@@ -45,7 +45,9 @@ public abstract class StoreDatabase extends RoomDatabase {
                 dao.deleteAll();
 
                 User user = new User("admin@admin.com", "admin", true, "Adminer", "Admin");
+                User user2 = new User("test@test.com", "test", false, "Test", "Tester");
                 dao.insert(user);
+                dao.insert(user2);
             });
         }
     };

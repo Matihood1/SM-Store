@@ -5,6 +5,8 @@
     <dimen name="medium_margin">14dp</dimen>
     <dimen name="big_margin">16dp</dimen>
     <dimen name="giant_margin">24dp</dimen>
+    <dimen name="product_details_header">20sp</dimen>
+    <dimen name="product_details_text">18sp</dimen>
     <dimen name="title_text_size">32sp</dimen>
     <dimen name="edit_content_margin">20dp</dimen>
     <dimen name="image_list_max_dimens">50dp</dimen>

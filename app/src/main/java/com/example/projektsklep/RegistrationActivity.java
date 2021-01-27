@@ -20,13 +20,13 @@ public class RegistrationActivity extends AppCompatActivity {
     public static final String EXTRA_LAST_NAME = "EXTRA_LAST_NAME";
     public static final String EXTRA_EMAIL = "EXTRA_EMAIL";
     public static final String EXTRA_PASSWORD = "EXTRA_PASSWORD";
-    public static final String KEY_FIRSTNAME_ERROR = "KEY_FIRSTNAME_ERROR";
-    public static final String KEY_LASTNAME_ERROR = "KEY_LASTNAME_ERROR";
-    public static final String KEY_EMAIL_ERROR = "KEY_EMAIL_ERROR";
-    public static final String KEY_PASSWORD_ERROR = "KEY_PASSWORD_ERROR";
-    public static final String KEY_PASSWORD_CONFIRM_ERROR = "KEY_PASSWORD_CONFIRM_ERROR";
 
-
+    /*public static final String KEY_USER_FIRSTNAME_ERROR = "KEY_USER_FIRSTNAME_ERROR";
+    public static final String KEY_USER_LASTNAME_ERROR = "KEY_USER_LASTNAME_ERROR";
+    public static final String KEY_USER_EMAIL_ERROR = "KEY_USER_EMAIL_ERROR";
+    public static final String KEY_USER_PASSWORD_ERROR = "KEY_USER_PASSWORD_ERROR";
+    public static final String KEY_USER_PASSWORD_CONFIRM_ERROR = "KEY_USER_PASSWORD_CONFIRM_ERROR";
+    public static final String KEY_USER_ADMIN_ERROR = "KEY_USER_ADMIN_ERROR";*/
 
     private TextInputLayout firstNameLayout;
     private TextInputEditText firstNameEditText;
@@ -156,9 +156,9 @@ public class RegistrationActivity extends AppCompatActivity {
             }
             @Override
             public void afterTextChanged(Editable s) {
-                if(emailEditText.getText().toString().length() <= 0) {
-                    emailLayout.setErrorEnabled(true);
-                    emailEditText.setError(getString(R.string.required_field));
+                if(passwordConfirmEditText.getText().toString().length() <= 0) {
+                    passwordConfirmLayout.setErrorEnabled(true);
+                    passwordConfirmEditText.setError(getString(R.string.required_field));
                 }
                 else if(!passwordConfirmEditText.getText().toString().equals(passwordEditText.getText().toString())) {
                     passwordConfirmLayout.setErrorEnabled(true);
@@ -219,5 +219,38 @@ public class RegistrationActivity extends AppCompatActivity {
         if(lightSensor != null) {
             lightSensor.onPause();
         }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        if(savedInstanceState != null) {
+            firstNameEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_FIRSTNAME));
+            lastNameEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_LASTNAME));
+            emailEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_EMAIL));
+            passwordEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_PASSWORD));
+            passwordConfirmEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_PASSWORD_CONFIRM));
+            /*firstNameLayout.setErrorEnabled(savedInstanceState.getBoolean(KEY_USER_FIRSTNAME_ERROR));
+            lastNameLayout.setErrorEnabled(savedInstanceState.getBoolean(KEY_USER_LASTNAME_ERROR));
+            emailLayout.setErrorEnabled(savedInstanceState.getBoolean(KEY_USER_EMAIL_ERROR));
+            passwordLayout.setErrorEnabled(savedInstanceState.getBoolean(KEY_USER_PASSWORD_ERROR));
+            passwordConfirmLayout.setErrorEnabled(savedInstanceState.getBoolean(KEY_USER_PASSWORD_CONFIRM_ERROR));*/
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        outState.putString(LoginActivity.KEY_USER_FIRSTNAME, firstNameEditText.getText().toString());
+        outState.putString(LoginActivity.KEY_USER_LASTNAME, lastNameEditText.getText().toString());
+        outState.putString(LoginActivity.KEY_USER_EMAIL, emailEditText.getText().toString());
+        outState.putString(LoginActivity.KEY_USER_PASSWORD, passwordEditText.getText().toString());
+        outState.putString(LoginActivity.KEY_USER_PASSWORD_CONFIRM, passwordConfirmEditText.getText().toString());
+        /*outState.putBoolean(KEY_USER_FIRSTNAME_ERROR, firstNameLayout.isErrorEnabled());
+        outState.putBoolean(KEY_USER_LASTNAME_ERROR, lastNameLayout.isErrorEnabled());
+        outState.putBoolean(KEY_USER_EMAIL_ERROR, emailLayout.isErrorEnabled());
+        outState.putBoolean(KEY_USER_PASSWORD_ERROR, passwordLayout.isErrorEnabled());
+        outState.putBoolean(KEY_USER_PASSWORD_CONFIRM_ERROR, passwordConfirmLayout.isErrorEnabled());*/
+
+        super.onSaveInstanceState(outState);
     }
 }

@@ -54,6 +54,7 @@ public class EditProductActivity extends AppCompatActivity {
     private String currentPhotoPath;
     private Product selectedProduct;
     private String imageLink;
+    private String deleteHash;
     private ImageView imageView;
     private Button setImageButton;
     private Button saveImageButton;
@@ -64,7 +65,8 @@ public class EditProductActivity extends AppCompatActivity {
     private TextInputLayout descriptionLayout;
     private TextInputEditText descriptionEditText;
     private Button saveProductButton;
-    private boolean imageUploaded = true;
+    private Button cancelButton;
+    private boolean nothingToUpload = true;
     private LightSensor lightSensor;
 
     private File createImageFile() throws IOException {
@@ -137,8 +139,9 @@ public class EditProductActivity extends AppCompatActivity {
                     if(response.code() == 200) {
                         JSONObject json = new JSONObject(response.body().string());
                         imageLink = json.getJSONObject("data").getString("id");
+                        deleteHash = json.getJSONObject("data").getString("deletehash");
                         //selectedProduct.setImageUrl(imageLink);
-                        imageUploaded = true;
+                        nothingToUpload = true;
                         if (file.exists()) {
                             file.delete();
                         }
@@ -154,20 +157,41 @@ public class EditProductActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
-        /*try {
-            Response response = client.newCall(request).execute();
-            int responseCode = response.code();
-            Log.i("responseCode", Integer.toString(responseCode));
-            if(response.code() == 200) {
-                JSONObject json = new JSONObject(response.body().string());
-                String imageLink = json.getJSONObject("LL").getString("data");
-                Log.i("imageLink", imageLink);
-                selectedProduct.setImageUrl(imageLink);
+    private void deleteImageFromImgur(String hash) {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .header("Authorization", "Client-ID " + API_IMGUR_CLIENT)
+                .method("DELETE", null)
+                .url(API_IMGUR_UPLOAD_URL + "/" + hash)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }*/
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                try {
+                    if(response.code() == 200) {
+                        JSONObject json = new JSONObject(response.body().string());
+                        imageLink = json.getJSONObject("data").getString("id");
+                        //selectedProduct.setImageUrl(imageLink);
+                        /*Snackbar.make(findViewById(R.id.edit_product_layout),
+                                getString(R.string.image_saved_successfully), Snackbar.LENGTH_LONG).show();*/
+                    }
+                    /*else {
+                        Snackbar.make(findViewById(R.id.edit_product_layout),
+                                getString(R.string.image_saving_error), Snackbar.LENGTH_LONG).show();
+                    }*/
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     @Override
@@ -184,6 +208,7 @@ public class EditProductActivity extends AppCompatActivity {
         descriptionLayout = findViewById(R.id.edit_product_description_layout);
         descriptionEditText = findViewById(R.id.edit_product_description);
         saveProductButton = findViewById(R.id.edit_product_save);
+        cancelButton = findViewById(R.id.edit_product_cancel);
 
         lightSensor = LoginActivity.lightSensor;
 
@@ -231,22 +256,6 @@ public class EditProductActivity extends AppCompatActivity {
             private String current = "";
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //Locale.setDefault(Locale.Category.FORMAT, Locale.forLanguageTag("pl_PL"));
-                //NumberFormat.getCurrencyInstance(Locale.forLanguageTag("pl_PL"));
-                /*if(!s.toString().equals(current)){
-                    priceEditText.removeTextChangedListener(this);
-
-                    String cleanString = s.toString().replaceAll("[ ,.zł]", "");
-
-                    double parsed = Double.parseDouble(cleanString);
-                    String formatted = NumberFormat.getCurrencyInstance().format((parsed/100));
-
-                    current = formatted;
-                    priceEditText.setText(formatted);
-                    priceEditText.setSelection(formatted.length());
-
-                    priceEditText.addTextChangedListener(this);
-                }*/
             }
             @Override
             public void afterTextChanged(Editable s) {
@@ -270,9 +279,19 @@ public class EditProductActivity extends AppCompatActivity {
         saveImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(imageUploaded == false) {
+                if(nothingToUpload == false) {
                     imageLink = null;
+                    if(deleteHash != null && !deleteHash.isEmpty()) {
+                        deleteImageFromImgur(deleteHash);
+                        deleteHash = null;
+                    }
                     uploadImageToImgur();
+                    if(selectedProduct != null) {
+                        if(selectedProduct.getImageDeleteHash() != null && !selectedProduct.getImageDeleteHash().isEmpty()) {
+                            deleteImageFromImgur(selectedProduct.getImageDeleteHash());
+                            selectedProduct.setImageDeleteHash(null);
+                        }
+                    }
                 }
             }
         });
@@ -299,15 +318,43 @@ public class EditProductActivity extends AppCompatActivity {
                         }
                         if(imageLink != null && !imageLink.isEmpty()) {
                             selectedProduct.setImageUrl(imageLink);
+                            selectedProduct.setImageDeleteHash(deleteHash);
                         }
                         replyIntent.putExtra(ProductsFragment.EXTRA_PRODUCT_DATA, selectedProduct);
                         setResult(RESULT_OK, replyIntent);
-
+                        File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+                        if (dir.isDirectory())
+                        {
+                            String[] children = dir.list();
+                            for (int i = 0; i < children.length; i++)
+                            {
+                                new File(dir, children[i]).delete();
+                            }
+                        }
                     /*if(currentPhotoPath != null && !currentPhotoPath.isEmpty()) {
                         //currentPhotoPath = null;
                     }*/
                     }
                     finish();
+                }
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(deleteHash != null && !deleteHash.isEmpty()) {
+                    deleteImageFromImgur(deleteHash);
+                    deleteHash = null;
+                }
+                File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+                if (dir.isDirectory())
+                {
+                    String[] children = dir.list();
+                    for (int i = 0; i < children.length; i++)
+                    {
+                        new File(dir, children[i]).delete();
+                    }
                 }
             }
         });
@@ -321,7 +368,7 @@ public class EditProductActivity extends AppCompatActivity {
             Bitmap imageBitmap = (Bitmap) extras.get("data");*/
             Bitmap imageBitmap = BitmapFactory.decodeFile(currentPhotoPath);
             imageView.setImageBitmap(imageBitmap);
-            imageUploaded = false;
+            nothingToUpload = false;
         }
     }
 

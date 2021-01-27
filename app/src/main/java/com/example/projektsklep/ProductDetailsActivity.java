@@ -1,5 +1,6 @@
 package com.example.projektsklep;
 
+import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,9 +9,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
 
+import java.util.Locale;
+
+import ru.discode.mailbackgroundlibrary.BackgroundMail;
+
 public class ProductDetailsActivity extends AppCompatActivity {
+    private User currentUser;
     private ImageView imageView;
     private TextView nameTextView;
     private TextView priceTextView;
@@ -32,10 +39,15 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         lightSensor = LoginActivity.lightSensor;
 
+        if (getIntent().hasExtra(LoginActivity.EXTRA_LOGIN_USER)) {
+            currentUser = (User) getIntent().getSerializableExtra(LoginActivity.EXTRA_LOGIN_USER);
+        }
+
         if (getIntent().hasExtra(ProductsFragment.EXTRA_PRODUCT_DATA)) {
             selectedProduct = (Product) getIntent().getSerializableExtra(ProductsFragment.EXTRA_PRODUCT_DATA);
             nameTextView.setText(selectedProduct.getName());
-            priceTextView.setText(String.valueOf(selectedProduct.getPrice()));
+            String formattedPrice = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("pl-PL")).format((selectedProduct.getPrice()));
+            priceTextView.setText(formattedPrice);
             descriptionTextView.setText(selectedProduct.getDescription());
             if (selectedProduct.getImageUrl() != null && !selectedProduct.getImageUrl().trim().isEmpty()) {
                 Picasso.get()
@@ -53,7 +65,34 @@ public class ProductDetailsActivity extends AppCompatActivity {
         purchaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                BackgroundMail.newBuilder(ProductDetailsActivity.this)
+                        .withMailBox("smtp.gmail.com", 465, true)
+                        .withFrom("SMkontoprojekt@gmail.com")
+                        .withUsername("SMkontoprojekt@gmail.com")
+                        .withPassword("1qaz@wsx3edC")
+                        .withSenderName("SMProj sp. z.o.o.")
+                        .withMailTo(currentUser.getEmail())
+                        .withType(BackgroundMail.TYPE_PLAIN)
+                        .withSubject(getString(R.string.email_subject))
+                        .withBody(String.format(getString(R.string.email_body),
+                                currentUser.getFirstName() + " " + currentUser.getLastName(),
+                                selectedProduct.getName()))
+                        .withOnSuccessCallback(new BackgroundMail.OnSendingCallback() {
+                            @Override
+                            public void onSuccess() {
+                                Snackbar.make(findViewById(R.id.product_details_layout),
+                                        getString(R.string.email_sent),
+                                        Snackbar.LENGTH_LONG).show();
+                            }
+
+                            @Override
+                            public void onFail(Exception e) {
+                                Snackbar.make(findViewById(R.id.product_details_layout),
+                                        getString(R.string.email_failed),
+                                        Snackbar.LENGTH_LONG).show();
+                            }
+                        })
+                        .send();
             }
         });
     }

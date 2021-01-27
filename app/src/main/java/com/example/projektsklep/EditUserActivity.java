@@ -18,6 +18,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class EditUserActivity extends AppCompatActivity {
+
     private User selectedUser;
     private User currentUser;
     private TextView editUserTextView;
@@ -218,5 +219,27 @@ public class EditUserActivity extends AppCompatActivity {
         if(lightSensor != null) {
             lightSensor.onPause();
         }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        if(savedInstanceState != null) {
+            firstNameEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_FIRSTNAME));
+            lastNameEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_LASTNAME));
+            emailEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_EMAIL));
+            passwordEditText.setText(savedInstanceState.getString(LoginActivity.KEY_USER_PASSWORD));
+            adminCheckBox.setChecked(savedInstanceState.getBoolean(LoginActivity.KEY_USER_ADMIN));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        outState.putString(LoginActivity.KEY_USER_FIRSTNAME, firstNameEditText.getText().toString());
+        outState.putString(LoginActivity.KEY_USER_LASTNAME, lastNameEditText.getText().toString());
+        outState.putString(LoginActivity.KEY_USER_EMAIL, emailEditText.getText().toString());
+        outState.putString(LoginActivity.KEY_USER_PASSWORD, passwordEditText.getText().toString());
+        outState.putBoolean(LoginActivity.KEY_USER_ADMIN, adminCheckBox.isChecked());
+        super.onSaveInstanceState(outState);
     }
 }

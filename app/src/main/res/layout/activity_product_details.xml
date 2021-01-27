@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+        android:id="@+id/product_details_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -14,42 +15,49 @@
             android:id="@+id/product_details_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="300dp"
-            android:maxHeight="300dp"
+            android:layout_gravity="center"
+            android:maxWidth="@dimen/image_preview_max_dimens"
+            android:maxHeight="@dimen/image_preview_max_dimens"
             android:adjustViewBounds="true"
             android:contentDescription="@string/product_image" />
         <TextView
             style="?android:listSeparatorTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/product_details_header"
             android:text="@string/product_name" />
         <TextView
             android:id="@+id/product_details_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/product_details_text" />
         <TextView
             style="?android:listSeparatorTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/product_price"/>
+            android:textSize="@dimen/product_details_header"
+            android:text="@string/product_price" />
         <TextView
             android:id="@+id/product_details_price"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/product_details_text" />
         <TextView
             style="?android:listSeparatorTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/product_description"/>
+            android:textSize="@dimen/product_details_header"
+            android:text="@string/product_description" />
         <TextView
             android:id="@+id/product_details_description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/product_details_text" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/product_purchase"
-            android:id="@+id/product_purchase_button"/>
+            android:id="@+id/product_purchase_button" />
     </LinearLayout>
 </ScrollView>

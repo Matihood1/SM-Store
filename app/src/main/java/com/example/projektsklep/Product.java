@@ -12,8 +12,8 @@ public class Product implements Serializable {
     private String name;
     private String description;
     private float price;
-
     private String imageUrl;
+    private String imageDeleteHash;
 
     public Product(String name, String description, float price) {
         this.name = name;
@@ -59,5 +59,13 @@ public class Product implements Serializable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getImageDeleteHash() {
+        return imageDeleteHash;
+    }
+
+    public void setImageDeleteHash(String imageDeleteHash) {
+        this.imageDeleteHash = imageDeleteHash;
     }
 }

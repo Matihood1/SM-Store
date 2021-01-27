@@ -37,3 +37,9 @@ m
 =app/src/main/java/com/example/projektsklep/UsersFragment.java,c\a\ca8f64816c120859a91c7a84f82b88acbd671ae7
 p
 @app/src/main/java/com/example/projektsklep/EditUserActivity.java,e\3\e32082ddea251ef394df9d4c26abf73857b18ac2
+k
+;app/src/main/java/com/example/projektsklep/LightSensor.java,0\b\0b51df05f31bc980c762017494bdb0dc99194f86
+]
+-app/src/main/res/layout/product_list_item.xml,0\9\09b85101de495b5782f8a9d65d16d0262e38a600
+Z
+*app/src/main/res/layout/user_list_item.xml,4\c\4cfbd8a55fca8fb1cf0be2f97105e6c1fb0c76f0

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Projekt Sklep</string>
+    <string name="app_name">Project Store</string>
     <string name="user_email">Email</string>
     <string name="user_password">Password</string>
     <string name="user_password_confirm">Confirm password</string>
@@ -7,6 +7,7 @@
     <string name="user_last_name">Last name</string>
     <string name="user_admin">Administrator</string>
     <string name="log_in">Log in</string>
+    <string name="log_in_title">Log in</string>
     <string name="register">Register</string>
     <string name="cancel">Cancel</string>
     <string name="user_created">User created! Log in to continue.</string>
@@ -48,4 +49,10 @@
     <string name="user_deleted">User deleted.</string>
     <string name="user_not_admin">Error! Current user isn\'t administrator!</string>
     <string name="changing_admin_for_yourself">Cannot change admin privileges for yourself!</string>
+    <string name="email_sent">Email successfully sent.</string>
+    <string name="email_failed">Email sending failed.</string>
+    <string name="email_subject">Purchase confirmation</string>
+    <string name="email_body">Greetings, %s!\n\nThank you for purchasing %s!\n\nThe transaction
+    is currently being processed. We will inform you once the next steps can be taken.\n\n
+    Regards,\n\nSMProj. sp. z.o.o.</string>
 </resources>

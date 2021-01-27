@@ -27,20 +27,20 @@
             android:layout_height="wrap_content"
             android:gravity="center">
             <Button
-                android:id="@+id/product_set_image_button"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/medium_margin"
-                android:text="@string/set_image" />
+                android:text="@string/set_image"
+                android:id="@+id/product_set_image_button" />
 
             <Button
-                android:id="@+id/product_save_image_button"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/medium_margin"
-                android:text="@string/save_image" />
+                android:text="@string/save_image"
+                android:id="@+id/product_save_image_button" />
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -83,11 +83,25 @@
                 android:id="@+id/edit_product_description" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/edit_product_save"
-            android:text="@string/button_save" />
+            android:gravity="center">
+            <Button
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:id="@+id/edit_product_save"
+                android:text="@string/button_save" />
+
+            <Button
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:id="@+id/edit_product_cancel"
+                android:text="@string/cancel" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

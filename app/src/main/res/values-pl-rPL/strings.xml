@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Projekt Sklep</string>
+    <string name="user_email">Email</string>
+    <string name="user_password">Hasło</string>
+    <string name="user_password_confirm">Potwierdź hasło</string>
+    <string name="user_first_name">Imię</string>
+    <string name="user_last_name">Nazwisko</string>
+    <string name="user_admin">Administrator</string>
+    <string name="log_in">Zaloguj</string>
+    <string name="log_in_title">Zaloguj się</string>
+    <string name="register">Zarejestruj</string>
+    <string name="cancel">Anuluj</string>
+    <string name="user_created">Użytkownik utworzony! Zaloguj się by kontunuować.</string>
+    <string name="user_not_found">Użytkownik nie znaleziony!</string>
+    <string name="required_field">Wymagane</string>
+    <string name="password_too_short">Hasło musi się składać z conajmniej 6 znaków!</string>
+    <string name="passwords_not_matching">Hasła nie pasują do siebie!</string>
+    <string name="incorrect_format">Niepoprawny format!</string>
+    <string name="product_thumbnail">Miniaturka produktu</string>
+    <string name="product_image">Obrazek produktu</string>
+    <string name="product_added">Dodano produkt.</string>
+    <string name="product_edited">Zedytowano produkt.</string>
+    <string name="product_delete_confirmation">Czy na pewno chcesz usunąć ten produkt?</string>
+    <string name="product_deleted">Produkt usunięty.</string>
+    <string name="search">Szukaj</string>
+    <string name="clear_search">Wyczyść wyszukiwanie</string>
+    <string name="products">Produkty</string>
+    <string name="settings">Ustawienia</string>
+    <string name="users">Użytkownicy</string>
+    <string name="log_out">Wyloguj</string>
+    <string name="button_save">Zapisz</string>
+    <string name="product_name">Nazwa</string>
+    <string name="product_description">Opis</string>
+    <string name="product_price">Cena</string>
+    <string name="camera_permission_denied">Nie udzielono dostępu do kamery.</string>
+    <string name="set_image">Ustaw obrazek</string>
+    <string name="save_image">Zapisz obrazek</string>
+    <string name="file_create_error">Wystąpił błąd w trakcie zapisywania pliku.</string>
+    <string name="image_saved_successfully">Obrazek zapisano pomyślnie.</string>
+    <string name="image_saving_error">Wystąpił błąd, obrazka nie zapisano.</string>
+    <string name="product_purchase">Zakup</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="add_user">Dodaj użytkownika</string>
+    <string name="edit_user">Edytuj użytkownika</string>
+    <string name="user_added">Użytkownik dodany.</string>
+    <string name="user_edited">Użytkownik zedytowany.</string>
+    <string name="user_delete_confirmation">Czy na pewno chcesz usunąć tego użytkownika?</string>
+    <string name="user_deleted">Użytkownik usunięty.</string>
+    <string name="user_not_admin">Błąd Obecny użytkownik nie jest administratorem!</string>
+    <string name="changing_admin_for_yourself">Nie można zmienić swoich przywilejów administatora!</string>
+    <string name="email_sent">Email wysłany pomyślnie.</string>
+    <string name="email_failed">Wysyłanie emaila nie powiodło się.</string>
+    <string name="email_subject">Potwierdzenie zakupu</string>
+    <string name="email_body">Witaj, %s!\n\nDziękujemy za dokonanie zakupu: %s!\n\nTransakcja
+    jest obecnie w trakcie przetwarzania. Zostaniesz poinformowany, gdy będzie można podjąć kolejne kroki.\n\n
+    Z poważaniem,\n\nSMProj. sp. z.o.o.</string>
+</resources>

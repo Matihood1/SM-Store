@@ -20,6 +20,13 @@ public class LoginActivity extends AppCompatActivity {
     public static final String EXTRA_LIGHT_SENSOR = "LIGHT_SENSOR";
     public static final int REGISTER_USER_ACTIVITY_REQUEST_CODE = 1;
 
+    public static final String KEY_USER_FIRSTNAME = "KEY_USER_FIRSTNAME";
+    public static final String KEY_USER_LASTNAME = "KEY_USER_LASTNAME";
+    public static final String KEY_USER_EMAIL = "KEY_USER_EMAIL";
+    public static final String KEY_USER_PASSWORD = "KEY_USER_PASSWORD";
+    public static final String KEY_USER_PASSWORD_CONFIRM = "KEY_USER_PASSWORD_CONFIRM";
+    public static final String KEY_USER_ADMIN = "KEY_USER_ADMIN";
+
     private TextInputLayout emailLayout;
     private TextInputEditText emailEditText;
     private TextInputLayout passwordLayout;
@@ -68,6 +75,11 @@ public class LoginActivity extends AppCompatActivity {
                 startActivityForResult(intent, REGISTER_USER_ACTIVITY_REQUEST_CODE);
             }
         });
+
+        if(savedInstanceState != null) {
+            emailEditText.setText(savedInstanceState.getString(KEY_USER_EMAIL));
+            passwordEditText.setText(savedInstanceState.getString(KEY_USER_PASSWORD));
+        }
     }
 
     @Override
@@ -98,5 +110,13 @@ public class LoginActivity extends AppCompatActivity {
         if(lightSensor != null) {
             lightSensor.onPause();
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        outState.putString(KEY_USER_EMAIL, emailEditText.getText().toString());
+        outState.putString(KEY_USER_PASSWORD, passwordEditText.getText().toString());
+        super.onSaveInstanceState(outState);
     }
 }
